@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @garden.name %></h1>
+    <p><%= @garden.address %></p>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-4 mx-auto">
+      <%= simple_form_for [@garden, @plant] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :image_url %>
+      <%= f.input :alive %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Back', gardens_path, class: "btn btn-secondary" %>
